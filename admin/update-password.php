@@ -10,7 +10,7 @@
             {
                 $id=$_GET['id'];
             }
-        ?>
+        ?>  
 
         <form action="" method="POST">
         

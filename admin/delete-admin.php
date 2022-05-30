@@ -1,4 +1,4 @@
-<?php 
+<!-- <?php 
 
     //Include constants.php file here
     include('../config/constants.php');
@@ -33,4 +33,4 @@
 
     //3. Redirect to Manage Admin page with message (success/error)
 
-?>
+?> -->
