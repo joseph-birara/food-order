@@ -24,7 +24,7 @@
     <!-- Categories Section Starts Here -->
     <section class="categories">
         <div class="container">
-            <h2 class="text-center">Explore Foods</h2>
+            <h4 class="text-center">Foods</h4>
 
             <?php 
                 //Create SQL Query to Display Categories from Database
@@ -89,7 +89,7 @@
     <!-- fOOD MEnu Section Starts Here -->
     <section class="food-menu">
         <div class="container">
-            <h2 class="text-center">Food Menu</h2>
+            <h4 class="text-center">dishes</h4>
 
             <?php 
             

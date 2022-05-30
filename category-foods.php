@@ -42,7 +42,7 @@
     <!-- fOOD MEnu Section Starts Here -->
     <section class="food-menu">
         <div class="container">
-            <h2 class="text-center">Food Menu</h2>
+            <h4 class="text-center">Dishes</h4>
 
             <?php 
             

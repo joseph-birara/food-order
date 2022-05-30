@@ -26,7 +26,7 @@
         <div class="container">
             <div class="logo">
                 <a href="#" title="Logo">
-                    <img src="images/food-label.jpg" alt="Restaurant Logo" class="img-responsive">
+                    <img src="images/food-label.jpg" alt="Restaurant Logo" class="img-logo">
                 </a>
             </div>
 
