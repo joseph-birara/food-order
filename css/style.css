@@ -21,10 +21,16 @@
     margin: 0 auto;
     padding: 1%;
 }
+.container2{
+    width: 80%;
+    height: 4%;
+    margin: 0 auto;
+    padding: 0.5%;
+}
 .img-logo{
     width: 60%;
     float: left;
-    height: 10%;
+    height: 3%;
 }
 .img-responsive{
     width: 100%;
@@ -113,12 +119,12 @@ fieldset{
     width: 10%;
     float: left;
     color:var(--black);
-    font-size: 2.5rem;
+    font-size: 1rem;
     font-weight: bolder;
-    height: 100%;
+    height: 4%;
 }
 .menu{
-    line-height: 60px;
+    line-height: 30px;
 }
 .menu ul{
     list-style-type: none;
@@ -204,20 +210,29 @@ fieldset{
 
 /* CSS for Social */
 .social{
-    height: 2%;
+    height: 5%;
     background-color: #514d4d;
-            /* position: fixed; */
-            /* bottom: 1%; */
-            width:100%;
-            background-attachment: scroll;
-            display:block;
+            
+    bottom: 0%;
+    width:100%;
+    top: 95%;
+    background-attachment: scroll;
+    display:block;
+    position: relative;
+    padding: 0.5% 0;
+    justify-items: center;
+
 }
 .social ul{
     list-style-type: none;
 }
 .social ul li{
     display: inline;
-    padding: 1%;
+    padding: auto;
+}
+.social ul li img{
+    height: 4%;
+    width: 4%;
 }
 
 /* for Order Section */
@@ -244,14 +259,15 @@ fieldset{
 
 @media only screen and (max-width:768px){
     .logo{
-        width: 70%;
+        width: 15%;
         float: none;
         margin: 1% auto;
+        height: 5%;
     }
     .img-logo{
     width: 20%;
     float: left;
-    height: 10%;
+    height: 5%;
 }
 
     .menu ul{
@@ -271,7 +287,7 @@ fieldset{
 
     .food-search{
         padding: 1% 0;
-        height: 5%;
+        height: 4%;
     }
 
     .categories{

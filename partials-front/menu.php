@@ -23,7 +23,7 @@
 <body>
     <!-- Navbar Section Starts Here -->
     <section class="navbar">
-        <div class="container">
+        <div class="container2">
             <div class="logo">
                 <a href="#" title="Logo">
                     <img src="images/food-label.jpg" alt="Restaurant Logo" class="img-logo">

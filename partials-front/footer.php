@@ -1,9 +1,10 @@
 <!-- social Section Starts Here -->
 <section class="social">
     
-        <div class="container text-center">
+        <div class="container2 ">
             <ul>
-                <li>
+                <li>&copyAll rights reserved</li>
+                <!-- <li>
                     <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
                 </li>
                 <li>
@@ -11,8 +12,8 @@
                 </li>
                 <li>
                     <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
-                </li>
-                <li>&copyAll rights reserved</li>
+                </li> -->
+                
             </ul>
         </div>
     </section>
