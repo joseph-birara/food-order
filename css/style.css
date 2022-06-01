@@ -177,6 +177,8 @@ fieldset{
 .food-menu{
     background-color: #ececec;
     padding: 2% 0;
+    
+
 }
 .food-menu-box{
     width: 30%;
@@ -185,11 +187,17 @@ fieldset{
     float: left;
     background-color: white;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 20%;
+    
 }
 
 .food-menu-img{
-    width: 40%;
+    width: 30%;
     float: left;
+    height: 30%;
 }
 
 .food-menu-desc{

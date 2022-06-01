@@ -49,7 +49,7 @@
                 <br><br><br>
 
                 <!-- Button to Add Admin -->
-                <a href="add-admin.php" class="btn-primary">Add Admin</a>
+                <a href="add-admin.php" class="btn-primary">creat addmin acount</a>
 
                 <br /><br /><br />
 
@@ -82,10 +82,7 @@
                                 //WE HAve data in database
                                 while($rows=mysqli_fetch_assoc($res))
                                 {
-                                    //Using While loop to get all the data from database.
-                                    //And while loop will run as long as we have data in database
-
-                                    //Get individual DAta
+                                    
                                     $id=$rows['id'];
                                     $full_name=$rows['full_name'];
                                     $username=$rows['username'];
@@ -100,7 +97,7 @@
                                         <td>
                                             <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
                                             <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
-                                            <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
+                                            <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">remove Admin</a>
                                         </td>
                                     </tr>
 

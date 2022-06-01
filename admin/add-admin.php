@@ -1,4 +1,4 @@
-<!-- <?php include('./partials/menu.php'); ?>
+<?php include('./partials/menu.php'); ?>
 
 <div class="main-content">
     <div class="wrapper">
@@ -14,28 +14,33 @@
             }
         ?>
 
-        <form action="" method="POST">
+        <form action="" method="POST" onsubmit="return(validate());" name ="myForm">
 
             <table class="tbl-30">
                 <tr>
                     <td>Full Name: </td>
                     <td>
-                        <input type="text" name="full_name" placeholder="Enter Your Name">
+                        <input type="text" name="full_name" placeholder="Enter Name">
                     </td>
+                    <td><span id="nm"></span></td>
                 </tr>
 
                 <tr>
                     <td>Username: </td>
                     <td>
-                        <input type="text" name="username" placeholder="Your Username">
+                        <input type="text" name="username" placeholder="Username">
                     </td>
+                    <td><span id ="un"></span></td>
                 </tr>
 
                 <tr>
                     <td>Password: </td>
                     <td>
-                        <input type="password" name="password" placeholder="Your Password">
+                        <input type="password" name="password"
+                        id ="password" 
+                        placeholder="Your Password">
                     </td>
+                    <td><span id= "ps"></span></td>
                 </tr>
 
                 <tr>
@@ -50,6 +55,7 @@
 
 
     </div>
+    <script src="./partials/validation.js"></script>
 </div>
 
 <?php include('partials/footer.php'); ?>
@@ -102,4 +108,4 @@
 
     }
     
-?> -->
+?> 

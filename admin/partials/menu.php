@@ -8,20 +8,21 @@
 
 <html>
     <head>
-        <title>Food Order Website</title>
+        <title>Food delivery Website</title>
 
         <link rel="stylesheet" href="../css/admin.css">
         <style>
-            a{
+           li a{
                 
                 text-decoration: none;
                 
-                color:black;
+                color:green;
                 
             
                 font-size: 0.8rem;
                 
             }
+            
         </style>
     </head>
     
@@ -29,11 +30,12 @@
         <!-- Menu Section Starts -->
         <div class="menu text-center">
             <div class="wrapper">
-                <ul>
-                    <li><a href="index.php">Home</a></li>
+                <ul >
+                    <li><a href="index.php" class="lin">Home</a></li>
                     <li><a href="manage-category.php">Category</a></li>
                     <li><a href="manage-food.php">Food</a></li>
                     <li><a href="manage-order.php">Order</a></li>
+                    <li> <a href="manage-admin.php">admins</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
