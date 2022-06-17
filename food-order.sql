@@ -1,11 +1,21 @@
-
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Jun 17, 2022 at 06:47 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `food-order`
@@ -29,10 +39,9 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`id`, `full_name`, `username`, `password`) VALUES
-(1, 'Arsenio Leach', 'toduwaxobi', 'f3ed11bbdb94fd9ebdefbaf646ab94d3'),
-(9, 'Sasha Mendez', 'goxemyde', 'f3ed11bbdb94fd9ebdefbaf646ab94d3'),
-(10, 'Vijay Thapa', 'vijaythapa', 'f3ed11bbdb94fd9ebdefbaf646ab94d3'),
-(12, 'Administrator', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+(9, 'joseph', 'jossy', 'f3ed11bbdb94fd9ebdefbaf646ab94d3'),
+(12, 'Administrator', 'admin', '21232f297a57a5a743894a0e4a801fc3'),
+(15, 'burtukan', 'me', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -53,10 +62,8 @@ CREATE TABLE `tbl_category` (
 --
 
 INSERT INTO `tbl_category` (`id`, `title`, `image_name`, `featured`, `active`) VALUES
-(4, 'Pizza', 'Food_Category_790.jpg', 'Yes', 'Yes'),
-(5, 'Burger', 'Food_Category_344.jpg', 'Yes', 'Yes'),
-(6, 'MoMo', 'Food_Category_77.jpg', 'Yes', 'Yes'),
-(8, 'Quia est ipsum id id', 'Food_Category_929.jpg', 'No', 'Yes');
+(10, 'snack', 'Food_Category_75.jpg', 'Yes', 'Yes'),
+(11, 'bread', 'Food_Category_284.jpg', 'Yes', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -80,12 +87,9 @@ CREATE TABLE `tbl_food` (
 --
 
 INSERT INTO `tbl_food` (`id`, `title`, `description`, `price`, `image_name`, `category_id`, `featured`, `active`) VALUES
-(3, 'Dumplings Specials', 'Chicken Dumpling with herbs from Mountains', '5.00', 'Food-Name-3649.jpg', 6, 'Yes', 'Yes'),
-(4, 'Best Burger', 'Burger with Ham, Pineapple and lots of Cheese.', '4.00', 'Food-Name-6340.jpg', 5, 'Yes', 'Yes'),
-(5, 'Smoky BBQ Pizza', 'Best Firewood Pizza in Town.', '6.00', 'Food-Name-8298.jpg', 4, 'No', 'Yes'),
-(6, 'Sadeko Momo', 'Best Spicy Momo for Winter', '6.00', 'Food-Name-7387.jpg', 6, 'Yes', 'Yes'),
-(7, 'Mixed Pizza', 'Pizza with chicken, Ham, Buff, Mushroom and Vegetables', '10.00', 'Food-Name-7833.jpg', 4, 'Yes', 'Yes'),
-(8, 'Sed ipsum cillum in', 'Sed aut officiis qui', '52.00', '', 5, 'No', 'No');
+(11, 'enjera', 'ethiopian no 1 dish', '90.00', 'Food-Name-4045.jpeg', 9, 'Yes', 'Yes'),
+(12, 'teff enjera', 'tipical habeshan', '80.00', 'Food-Name-495.jpeg', 11, 'Yes', 'Yes'),
+(16, 'tt', 'mdsjjrghejj', '78.00', 'Food-Name-2047.png', 10, 'Yes', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -112,9 +116,11 @@ CREATE TABLE `tbl_order` (
 --
 
 INSERT INTO `tbl_order` (`id`, `food`, `price`, `qty`, `total`, `order_date`, `status`, `customer_name`, `customer_contact`, `customer_email`, `customer_address`) VALUES
-(1, 'Sadeko Momo', '6.00', 3, '18.00', '2020-11-30 03:49:48', 'Cancelled', 'Bradley Farrell', '+1 (576) 504-4657', 'zuhafiq@mailinator.com', 'Duis aliqua Qui lor'),
-(2, 'Best Burger', '4.00', 4, '16.00', '2020-11-30 03:52:43', 'Delivered', 'Kelly Dillard', '+1 (908) 914-3106', 'fexekihor@mailinator.com', 'Incidunt ipsum ad d'),
-(3, 'Mixed Pizza', '10.00', 2, '20.00', '2020-11-30 04:07:17', 'Delivered', 'Jana Bush', '+1 (562) 101-2028', 'tydujy@mailinator.com', 'Minima iure ducimus');
+(4, 'Mixed Pizza', '10.00', 1, '10.00', '2022-05-29 00:00:00', 'Ordered', 'burte', '99488589', 'josephbirara92@gmail.com', 'thjj'),
+(5, 'Dumplings Specials', '5.00', 4, '20.00', '2022-05-29 00:00:00', 'Ordered', 'joseph', '99488589', 'joseph@exam.com', 'yt'),
+(6, 'Best Burger', '4.00', 2, '8.00', '2022-05-30 00:00:00', 'Delivered', 'burte', '99488589', 'josephbirara92@gmail.com', '22'),
+(7, 'Best Burger', '4.00', 4, '16.00', '2022-05-30 00:00:00', 'Cancelled', 'fraol', '097557', 'joseph@exam.com', 'bole'),
+(8, 'teff enjera', '80.00', 1, '80.00', '2022-06-17 00:00:00', 'Delivered', 'burte', '99488589', 'josephbirara92@gmail.com', 'yhhrhgh');
 
 --
 -- Indexes for dumped tables
@@ -152,25 +158,27 @@ ALTER TABLE `tbl_order`
 -- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_food`
 --
 ALTER TABLE `tbl_food`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
