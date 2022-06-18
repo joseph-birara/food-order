@@ -8,7 +8,7 @@
         //REdirect to login page with message
         $_SESSION['no-login-message-front'] = "<div class='error text-center'>Please login to access Admin Panel.</div>";
         //REdirect to Login Page
-        header('location:'.SITEURL.'loginFront.html');
+        header('location:'.SITEURL.'login_and_register_form.php');
     }
 
 ?>

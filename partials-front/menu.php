@@ -1,5 +1,6 @@
 <?php include('config/constants.php'); 
-include('../islogedin.php');
+include('partials-front/islogedin.php');
+
 ?>
 
 

@@ -5,6 +5,6 @@
     session_destroy(); //Unsets $_SESSION['customer']
 
     //2. REdirect to Login Page
-    header('location:'.SITEURL.'loginFront.html');
+    header('location:'.SITEURL.'login_and_register_form.php');
 
 ?>

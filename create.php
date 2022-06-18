@@ -1,7 +1,8 @@
-<?php include('./partials/menu.php'); ?>
+<?php 
+include('config/constants.php');
 
 
-
+?>
     
        
 
@@ -18,12 +19,16 @@
         //1. Get the Data from form
         $email = $_POST['email'];
         $username = $_POST['username'];
-        $password = ($_POST['password']); //Password Encryption with MD5
+        $password = ($_POST['password']); 
+        $lastname=($_POST['lastname']);
+
 
         //2. SQL Query to Save the data into database
         $sql = "INSERT INTO customer SET 
-            email='$email',
+            
             name='$username',
+            lastname='$lastname',
+            email='$email',
             pass='$password'
         ";
  
@@ -34,15 +39,15 @@
         {
         
             //Create a Session Variable to Display Message
-            $_SESSION['create'] = "<div class='success'>Admin Added Successfully.</div>";
-            header("location:".SITEURL.'loginFront.html');
+            $_SESSION['create'] = "<div class='success'>account created Successfully.</div>";
+            header("location:".SITEURL.'login_and_register_form.php');
         }
         else
         {
             
-            $_SESSION['notcreate'] = "<div class='error'>Failed to Add Admin.</div>";
-            //Redirect Page to Add Admin
-            header("location:".SITEURL.'create.php.php');
+            $_SESSION['notcreate'] = "<div class='error'>Failed to to creat acount .</div>";
+            //Redirect Page to creat account page
+            header("location:".SITEURL.'login_and_register_form.php');
         }
 
     }
