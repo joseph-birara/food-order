@@ -101,9 +101,6 @@
                 }
 
                 //Check whether the image is selected or not and set the value for image name accoridingly
-                //print_r($_FILES['image']);
-
-                //die();//Break the Code Here
 
                 if(isset($_FILES['image']['name']))
                 {
@@ -116,13 +113,11 @@
                     {
 
                         //Auto Rename our Image
-                        //Get the Extension of our image (jpg, png, gif, etc) e.g. "specialfood1.jpg"
+                        //Get the Extension of our image (jpg, png, gif, etc) e.g. 
                         $ext = end(explode('.', $image_name));
 
                         //Rename the Image
-                        $image_name = "Food_Category_".rand(000, 999).'.'.$ext; // e.g. Food_Category_834.jpg
-                        
-
+                        $image_name = "Food_Category_".rand(000, 999).'.'.$ext;
                         $source_path = $_FILES['image']['tmp_name'];
 
                         $destination_path = "../images/category/".$image_name;
@@ -164,9 +159,7 @@
                 //4. Check whether the query executed or not and data added or not
                 if($res==true)
                 {
-                    //Query Executed and Category Added
                     $_SESSION['add'] = "<div class='success'>Category Added Successfully.</div>";
-                    //Redirect to Manage Category Page
                     header('location:'.SITEURL.'admin/manage-category.php');
                 }
                 else

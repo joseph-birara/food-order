@@ -95,7 +95,7 @@
             
             //Getting Foods from Database that are active and featured
             //SQL Query
-            $sql2 = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' LIMIT 6";
+            $sql2 = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' ";
 
             //Execute the Query
             $res2 = mysqli_query($conn, $sql2);
@@ -171,7 +171,7 @@
         </div>
 
         <p class="text-center">
-            <a href="#">See All Foods</a>
+            <a href="#">See more Foods</a>
         </p>
     </section>
     <!-- fOOD Menu Section Ends Here -->
