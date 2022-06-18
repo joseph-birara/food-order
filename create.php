@@ -1,10 +1,10 @@
 <?php 
 include('config/constants.php');
-
-
+// echo var_dump($conn);
+echo var_dump($_POST);
 ?>
-    
-       
+
+
 
 
 <?php 
@@ -12,30 +12,31 @@ include('config/constants.php');
 
     //Check whether the submit button is clicked or not
 
-    if(isset($_POST['submit']))
+    if($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         
 
         //1. Get the Data from form
         $email = $_POST['email'];
         $username = $_POST['username'];
-        $password = ($_POST['password']); 
-        $lastname=($_POST['lastname']);
+        $password = $_POST['password']; 
+        $lastname=$_POST['lastname'];
 
 
         //2. SQL Query to Save the data into database
-        $sql = "INSERT INTO customer SET 
-            
+        $sql = "INSERT INTO customer SET
             name='$username',
             lastname='$lastname',
             email='$email',
-            pass='$password'
-        ";
+            pass='$password' 
+            ";
  
         //3. Executing Query and Saving Data into Datbase
-        $res = mysqli_query($conn, $sql) or die(mysqli_error());
+        $res = mysqli_query($conn, $sql);
 
-        if($res==TRUE)
+        // echo var_dump($res);
+
+        if($res)
         {
         
             //Create a Session Variable to Display Message
@@ -52,4 +53,4 @@ include('config/constants.php');
 
     }
     
-?> 
+?>
