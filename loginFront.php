@@ -1,11 +1,11 @@
 <?php 
 include('config/constants.php');
 
-//CHeck whether the Submit Button is Clicked or NOt
+
     if($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         //Process for Login
-        //1. Get the Data from Login form
+        
          $name = $_POST['name'];
          $pass =($_POST['pass']);
         
@@ -16,22 +16,11 @@ include('config/constants.php');
         
         $res = mysqli_query($conn, $sql);
 
-    // if($res){
-    //     echo "database is quere";
-    // }
-    // else{
-    //     echo "failed to do";
-    // }
-
-        // $count = mysqli_num_rows($res);
-
         if($res)
         {
             //User AVailable and Login Success
-            $_SESSION['loginFront'] = "<div class='success'>Login Successful.</div>";
+            $_SESSION['loginFront'] = "<div>Login Successful.</div>";
             $_SESSION['customer'] = $name; //TO check whether the user is logged in or not and logout will unset it
-
-            //REdirect to HOme Page
             header('location:'.SITEURL.'index.php');
         }
         else

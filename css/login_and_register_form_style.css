@@ -11,7 +11,7 @@ h2 {
 	height:780px;
 	position:relative;
 	margin:2% auto;
-	background:rgba(0,0,0,0.3);
+	background:rgba(226, 185, 185, 0.3);
 	padding:10px;
 
     overflow: hidden;
@@ -24,7 +24,7 @@ h2 {
 	width:220px;
 	margin:35px auto;
 	position:relative;
-	box-shadow: 0 0 20px 9px #ff61241f;
+	box-shadow: 0 0 20px 9px #2436ff1f;
 	border-radius: 30px;
 }
 .toggle-btn
@@ -41,11 +41,12 @@ h2 {
 	top: 0;
 	left:0;
 	position: absolute;
-	width: 110px;
+	width: 130px;
 	height: 100%;
-	background: #F3C693;
+	background: #e8c49b;
 	border-radius: 30px;
 	transition: .5s;
+	font-size: large;
 }
 .input-group-login
 {
@@ -80,10 +81,11 @@ h2 {
 	cursor: pointer;
 	display: block;
 	margin: auto;
-	background: #F3C693;
+	background: #a093f3;
 	border: 0;
 	outline: none;
 	border-radius: 30px;
+	font-size: large;
 }
 .check-box
 {

@@ -39,33 +39,37 @@ table tr td{
 }
 
 .btn-primary{
-    background-color: #1e90ff;
+    background-color: #4f5d4f;
     padding: 1%;
     color: white;
     text-decoration: none;
+    width: 30%;
     font-weight: bold;
+    border-radius: 15px;
 }
 .btn-primary:hover{
     background-color: #3742fa;
 }
 
 .btn-secondary{
-    background-color: #7bed9f;
+    background-color: #c0d1c5;
     padding: 1%;
     color: black;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 3rem;
 }
 .btn-secondary:hover{
     background-color: #2ed573;
 }
 
 .btn-danger{
-    background-color: #ff6b81;
+    background-color: #db102e;
     padding: 1%;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 3rem;
 }
 .btn-danger:hover{
     background-color: #ff4757;
@@ -123,7 +127,11 @@ table tr td{
 /* CSS for Login */
 .login{
     border: 1px solid grey;
-    width: 20%;
+    width: 40%;
+    height: 60%;
     margin: 10% auto;
     padding: 2%;
+    text-align: center;
+    align-content: center;
+    background-color: antiquewhite;
 }

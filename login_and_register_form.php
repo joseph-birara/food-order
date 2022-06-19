@@ -1,16 +1,21 @@
 <?php include('config/constants.php'); 
 session_start();
+$message="";
 if(isset($_SESSION['no-login-message-front'])){
-    echo $_SESSION['no-login-message-front'];
+    $message= $_SESSION['no-login-message-front'];
     unset($_SESSION['no-login-message-front']);
 }
 if(isset($_SESSION['create'])){
-    echo $_SESSION['create'];
+    $message=$_SESSION['create'];
+    
     unset($_SESSION['create']);
 }
 if(isset($_SESSION['notcreate'])){
-    echo $_SESSION['notcreate'];
+    $message= $_SESSION['notcreate'];
     unset($_SESSION['notcreate']);
+}
+if(!$message){
+    $message="Welcome";
 }
 
 ?>
@@ -20,18 +25,14 @@ if(isset($_SESSION['notcreate'])){
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="css/login_and_register_form_style.css">
-    <style>
-
-    </style>
-    <script defer src="css/formValidation.js">
-    </script>
+    
 </head>
 
 <body>
 
     <div id="error" cass="error">
 
-        <h2>hello</h2>
+        <h2 id="txt"><?php echo $message;?></h2>
     </div>
     <div id='login-form' class='login-page'>
         <div class=" form-box">
@@ -49,8 +50,8 @@ if(isset($_SESSION['notcreate'])){
                 <input type='checkbox' class='check-box'><span>Remember Password</span>
                 <button type='submit' class='submit-btn'>Log in</button>
             </form>
-            <form onsubmit="return(validate());" id='register' class='input-group-register' action=" create.php"
-                method="post">
+            <form onsubmit="return validate()" id='register' class='input-group-register' action="create.php"
+                method="post" name="myform">
                 Name:
                 <input id="name" type='text' class='input-field' placeholder='First Name' name="username" equired>
                 Last name:
@@ -91,9 +92,141 @@ if(isset($_SESSION['notcreate'])){
     var modal = document.getElementById('login-form');
     window.onclick = function(event) {
         if (event.target == modal) {
-            modal.style.display = " none";
+            modal.style.display = "none";
         }
     }
+    </script>
+    <script>
+
+
+
+//validate password 
+
+function confirmPasswod() {
+     let message=''
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById('confirm_password').value;
+        if (password != confirmPassword) {
+            message="Passwords do not match.";
+            document.getElementById("password").focus();
+            
+        }
+    let pt = /[0-9]/;
+    let pt2 = /[A-Z]/;
+    let pt3 = /[a-z]/;
+
+      if (password.length < 8) {
+        
+        message = "password too short!";
+        document.getElementById("password").focus();
+        
+    }
+    if (!password.match(pt)) {
+        message = "password should contain number"
+        document.getElementById("password").focus();
+        
+    }
+    if (!password.match(pt2)) {
+       message = "password should contain capital letter"
+       document.getElementById("password").focus();
+        
+    }
+    if (!password.match(pt3)) {
+        message = "password should contain small letter"
+        document.getElementById("password").focus();
+    }
+    
+        return message;
+}
+    
+
+//validate email
+
+function validateEmail(){
+    let email=document.getElementById("email").value;
+    var text=''
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(!email.match(mailformat))
+    
+            {
+                text="too short  or email has a wrong format" ;
+                document.getElementById("email").focus() ;
+                return text;
+            }
+      
+}
+    
+//validate name 
+
+ function validateusername()
+ {
+    var text='';
+    var name = document.getElementById('name');
+    var userName =name.value;
+
+    var pattern=/^[A-z0-9]+$/;
+    if(!userName.match(pattern))
+
+    {
+        text = "User name should conatin only alphanumeric characters";
+         name.focus();
+        
+    }
+        if (userName.length > 12 || userName.length< 6) {
+            text = " name length must be between 6 and 12";
+         name.focus();
+        
+
+        }
+        return text;
+ }
+
+ //validate last name 
+
+function validateLastname()
+{
+    var tx='';
+    var lastname = document.getElementById('lastname');
+    var lName =lastname.value;
+
+    var pattern=/^[A-z0-9]+$/;
+    if(!lName.match(pattern))
+
+    {
+        tx = "last name should conatin only alphanumeric characters";
+         lastname.focus();
+        
+    }
+        if (lName.length > 12 || lName.length< 6) {
+            tx = "last name length must be between 6 and 12";
+         lastname.focus();
+        
+
+        }
+        return tx;
+}
+function validate() {
+    let val= document.getElementById('txt');
+    if (confirmPasswod()) {
+        val.innerText=confirmPasswod();
+        return false;
+    }
+    if (validateusername()) {
+        val.innerText=validateusername();
+        return false;
+    }
+    if (validateLastname()) {
+        val.innerText=validateLastname();
+       return false;
+    }
+    if (validateEmail()) {
+        val.innerText=validateEmail();
+        return false
+    }
+    return true;
+
+}
+
     </script>
 </body>
 

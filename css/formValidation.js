@@ -1,4 +1,4 @@
-var  tag = document.getElementBy('error');
+var  tag = document.getElementById('txt');
 var text = tag.innerHTML;
 //validate password 
 
