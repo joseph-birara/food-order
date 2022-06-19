@@ -33,13 +33,11 @@
 
                     <?php 
                         //Get all the orders from database
-                        $sql = "SELECT * FROM tbl_order ORDER BY id DESC"; // DIsplay the Latest Order at First
-                        //Execute Query
+                        $sql = "SELECT * FROM tbl_order ORDER BY id DESC";// DIsplay the Latest first
                         $res = mysqli_query($conn, $sql);
-                        //Count the Rows
                         $count = mysqli_num_rows($res);
 
-                        $sn = 1; //Create a Serial Number and set its initail value as 1
+                        $sn = 1; 
 
                         if($count>0)
                         {

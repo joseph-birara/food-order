@@ -72,10 +72,9 @@
                         //Query to Get all CAtegories from Database
                         $sql = "SELECT * FROM tbl_category";
 
-                        //Execute Query
                         $res = mysqli_query($conn, $sql);
 
-                        //Count Rows
+                        
                         $count = mysqli_num_rows($res);
 
                         //Create Serial Number Variable and assign value as 1

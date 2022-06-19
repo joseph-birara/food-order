@@ -69,20 +69,15 @@
         </form>
         <!-- Add CAtegory Form Ends -->
 
-        <?php 
-        
-            //CHeck whether the Submit Button is Clicked or Not
+        <?php
             if(isset($_POST['submit']))
             {
-                //echo "Clicked";
-
-                //1. Get the Value from CAtegory Form
+                                //1. Get the Value from CAtegory Form
                 $title = $_POST['title'];
 
                 //For Radio input, we need to check whether the button is selected or not
                 if(isset($_POST['featured']))
                 {
-                    //Get the VAlue from form
                     $featured = $_POST['featured'];
                 }
                 else
@@ -107,8 +102,7 @@
                     //Upload the Image
                     //To upload image we need image name, source path and destination path
                     $image_name = $_FILES['image']['name'];
-                    
-                    // Upload the Image only if image is selected
+                
                     if($image_name != "")
                     {
 

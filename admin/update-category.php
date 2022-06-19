@@ -12,16 +12,9 @@
             //Check whether the id is set or not
             if(isset($_GET['id']))
             {
-                //Get the ID and all other details
-                //echo "Getting the Data";
-                $id = $_GET['id'];
-                //Create SQL Query to get all other details
+               $id = $_GET['id'];
                 $sql = "SELECT * FROM tbl_category WHERE id=$id";
-
-                //Execute the Query
                 $res = mysqli_query($conn, $sql);
-
-                //Count the Rows to check whether the id is valid or not
                 $count = mysqli_num_rows($res);
 
                 if($count==1)
@@ -35,7 +28,6 @@
                 }
                 else
                 {
-                    //redirect to manage category with session message
                     $_SESSION['no-category-found'] = "<div class='error'>Category not Found.</div>";
                     header('location:'.SITEURL.'admin/manage-category.php');
                 }
@@ -117,53 +109,37 @@
         </form>
 
         <?php 
-        
+        //proccess the update
             if(isset($_POST['submit']))
             {
-                //echo "Clicked";
-                //1. Get all the values from our form
+            
                 $id = $_POST['id'];
                 $title = $_POST['title'];
                 $current_image = $_POST['current_image'];
                 $featured = $_POST['featured'];
                 $active = $_POST['active'];
-
-                //2. Updating New Image if selected
                 //Check whether the image is selected or not
                 if(isset($_FILES['image']['name']))
                 {
-                    //Get the Image Details
                     $image_name = $_FILES['image']['name'];
-
-                    //Check whether the image is available or not
                     if($image_name != "")
                     {
-                        //Image Available
-
-                        //A. UPload the New Image
-
-                        //Auto Rename our Image
-                        //Get the Extension of our image (jpg, png, gif, etc) e.g. "specialfood1.jpg"
+                       //rename for standard naming
                         $ext = end(explode('.', $image_name));
-
-                        //Rename the Image
-                        $image_name = "Food_Category_".rand(000, 999).'.'.$ext; // e.g. Food_Category_834.jpg
-                        
+                        $image_name = "Food_Category_".rand(000, 999).'.'.$ext; 
 
                         $source_path = $_FILES['image']['tmp_name'];
 
                         $destination_path = "../images/category/".$image_name;
 
-                        //Finally Upload the Image
+                        
                         $upload = move_uploaded_file($source_path, $destination_path);
 
                         //Check whether the image is uploaded or not
-                        //And if the image is not uploaded then we will stop the process and redirect with error message
                         if($upload==false)
                         {
                             //SEt message
                             $_SESSION['upload'] = "<div class='error'>Failed to Upload Image. </div>";
-                            //Redirect to Add CAtegory Page
                             header('location:'.SITEURL.'admin/manage-category.php');
                             //STop the Process
                             die();
@@ -177,7 +153,6 @@
                             $remove = unlink($remove_path);
 
                             //CHeck whether the image is removed or not
-                            //If failed to remove then display message and stop the processs
                             if($remove==false)
                             {
                                 //Failed to remove image
@@ -207,11 +182,7 @@
                     active = '$active' 
                     WHERE id=$id
                 ";
-
-                //Execute the Query
                 $res2 = mysqli_query($conn, $sql2);
-
-                //4. REdirect to Manage Category with MEssage
                 //CHeck whether executed or not
                 if($res2==true)
                 {

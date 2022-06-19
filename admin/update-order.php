@@ -11,15 +11,10 @@
             //CHeck whether id is set or not
             if(isset($_GET['id']))
             {
-                //GEt the Order Details
-                $id=$_GET['id'];
 
-                //Get all other details based on this id
-                //SQL Query to get the order details
+                $id=$_GET['id'];
                 $sql = "SELECT * FROM tbl_order WHERE id=$id";
-                //Execute Query
                 $res = mysqli_query($conn, $sql);
-                //Count Rows
                 $count = mysqli_num_rows($res);
 
                 if($count==1)
@@ -39,7 +34,6 @@
                 else
                 {
                     //DEtail not Available/
-                    //Redirect to Manage Order
                     header('location:'.SITEURL.'admin/manage-order.php');
                 }
             }
@@ -130,8 +124,6 @@
             //CHeck whether Update Button is Clicked or Not
             if(isset($_POST['submit']))
             {
-                //echo "Clicked";
-                //Get All the Values from Form
                 $id = $_POST['id'];
                 $price = $_POST['price'];
                 $qty = $_POST['qty'];
@@ -156,12 +148,8 @@
                     customer_address = '$customer_address'
                     WHERE id=$id
                 ";
-
-                //Execute the Query
                 $res2 = mysqli_query($conn, $sql2);
 
-                //CHeck whether update or not
-                //And REdirect to Manage Order with Message
                 if($res2==true)
                 {
                     //Updated

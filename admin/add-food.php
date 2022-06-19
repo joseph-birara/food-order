@@ -49,23 +49,19 @@
                 <tr>
                     <td>Category: </td>
                     <td>
+                        <!-- display catagories in dropdawn -->
                         <select name="category">
 
                             <?php 
                                 //Create PHP Code to display categories from Database
                                 //1. CReate SQL to get all active categories from database
                                 $sql = "SELECT * FROM tbl_category WHERE active='Yes'";
-                                
-                                //Executing qUery
                                 $res = mysqli_query($conn, $sql);
-
-                                //Count Rows to check whether we have categories or not
                                 $count = mysqli_num_rows($res);
 
-                                //IF count is greater than zero, we have categories else we donot have categories
                                 if($count>0)
                                 {
-                                    //WE have categories
+                                    
                                     while($row=mysqli_fetch_assoc($res))
                                     {
                                         //get the details of categories
@@ -87,8 +83,6 @@
                                     <?php
                                 }
                             
-
-                                //2. Display on Drpopdown
                             ?>
 
                         </select>
@@ -127,10 +121,7 @@
             //CHeck whether the button is clicked or not
             if(isset($_POST['submit']))
             {
-                //Add the Food in Database
-                //echo "Clicked";
-                
-                //1. Get the DAta from Form
+              //1. Get the DAta from Form
                 $title = $_POST['title'];
                 $description = $_POST['description'];
                 $price = $_POST['price'];
@@ -165,32 +156,19 @@
                     //Check Whether the Image is Selected or not and upload image only if selected
                     if($image_name!="")
                     {
-                        // Image is SElected
-                        //A. REnamge the Image
-                        //Get the extension of selected image (jpg, png, gif, etc.) "vijay-thapa.jpg" vijay-thapa jpg
-                        // $ext = end(explode('.', $image_name));
+                    
                         $image_info = explode (".", $image_name);
                         $ext = end($image_info);
 
-                        // Create New Name for Image
-                        $image_name = "Food-Name-".rand(0000,9999).".".$ext; //New Image Name May Be "Food-Name-657.jpg"
-
-                        //B. Upload the Image
-                        //Get the Src Path and DEstinaton path
-
+                        $image_name = "Food-Name-".rand(0000,9999).".".$ext; 
+                        
                         // Source path is the current location of the image
                         $src = $_FILES['image']['tmp_name'];
 
-                        //Destination Path for the image to be uploaded
                         $dst = "../images/food/".$image_name;
-
-                        //Finally Uppload the food image
                         $upload = move_uploaded_file($src, $dst);
-
-                        //check whether image uploaded of not
                         if($upload==false)
                         {
-                            //Failed to Upload the image
                             //REdirect to Add Food Page with Error Message
                             $_SESSION['upload'] = "<div class='error'>Failed to Upload Image.</div>";
                             header('location:'.SITEURL.'admin/add-food.php');
@@ -208,9 +186,7 @@
 
                 //3. Insert Into Database
 
-                //Create a SQL Query to Save or Add food
-                // For Numerical we do not need to pass value inside quotes '' But for string value it is compulsory to add quotes ''
-                $sql2 = "INSERT INTO tbl_food SET 
+                 $sql2 = "INSERT INTO tbl_food SET 
                     title = '$title',
                     description = '$description',
                     price = $price,
@@ -220,14 +196,11 @@
                     active = '$active'
                 ";
 
-                //Execute the Query
                 $res2 = mysqli_query($conn, $sql2);
 
-                //CHeck whether data inserted or not
-                //4. Redirect with MEssage to Manage Food page
                 if($res2 == true)
                 {
-                    //Data inserted Successfullly
+
                     $_SESSION['add'] = "<div class='success'>Food Added Successfully.</div>";
                     header('location:'.SITEURL.'admin/manage-food.php');
                 }

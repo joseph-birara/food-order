@@ -58,11 +58,7 @@
                     <?php 
                         //Create a SQL Query to Get all the Food
                         $sql = "SELECT * FROM tbl_food";
-
-                        //Execute the qUery
                         $res = mysqli_query($conn, $sql);
-
-                        //Count Rows to check whether we have foods or not
                         $count = mysqli_num_rows($res);
 
                         //Create Serial Number VAriable and Set Default VAlue as 1
@@ -70,8 +66,7 @@
 
                         if($count>0)
                         {
-                            //We have food in Database
-                            //Get the Foods from Database and Display
+                            //We have food in Databas
                             while($row=mysqli_fetch_assoc($res))
                             {
                                 //get the values from individual columns

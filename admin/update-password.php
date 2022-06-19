@@ -55,9 +55,6 @@
             //CHeck whether the Submit Button is Clicked on Not
             if(isset($_POST['submit']))
             {
-                //echo "CLicked";
-
-                //1. Get the DAta from Form
                 $id=$_POST['id'];
                 $current_password = md5($_POST['current_password']);
                 $new_password = md5($_POST['new_password']);
@@ -66,8 +63,6 @@
 
                 //2. Check whether the user with current ID and Current Password Exists or Not
                 $sql = "SELECT * FROM tbl_admin WHERE id=$id AND password='$current_password'";
-
-                //Execute the Query
                 $res = mysqli_query($conn, $sql);
 
                 if($res==true)
@@ -77,8 +72,6 @@
 
                     if($count==1)
                     {
-                        //User Exists and Password Can be CHanged
-                        //echo "User FOund";
 
                         //Check whether the new password and confirm match or not
                         if($new_password==$confirm_password)
@@ -88,23 +81,15 @@
                                 password='$new_password' 
                                 WHERE id=$id
                             ";
-
-                            //Execute the Query
                             $res2 = mysqli_query($conn, $sql2);
-
-                            //CHeck whether the query exeuted or not
                             if($res2==true)
                             {
-                                //Display Succes Message
-                                //REdirect to Manage Admin Page with Success Message
                                 $_SESSION['change-pwd'] = "<div class='success'>Password Changed Successfully. </div>";
                                 //Redirect the User
                                 header('location:'.SITEURL.'admin/manage-admin.php');
                             }
                             else
                             {
-                                //Display Error Message
-                                //REdirect to Manage Admin Page with Error Message
                                 $_SESSION['change-pwd'] = "<div class='error'>Failed to Change Password. </div>";
                                 //Redirect the User
                                 header('location:'.SITEURL.'admin/manage-admin.php');
@@ -128,9 +113,7 @@
                     }
                 }
 
-                //3. CHeck Whether the New Password and Confirm Password Match or not
-
-                //4. Change PAssword if all above is true
+            
             }
 
 ?>
