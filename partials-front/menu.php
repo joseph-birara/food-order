@@ -1,11 +1,21 @@
 <?php include('config/constants.php'); 
-include('partials-front/islogedin.php');
+ if(!isset($_SESSION['customer']))
+    {
+        $text="logIn";
+        $addres="login_and_register_form.php";
+    }
+    else{
+        $text="logOut";
+        $addres="logoutFront.php";
+    }
+
 
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- Important to make website responsive -->
@@ -15,12 +25,12 @@ include('partials-front/islogedin.php');
     <!-- Link our CSS file -->
     <link rel="stylesheet" href="./css/style.css">
     <style>
-        .navbar{
-            height:5%;
-            position: relative;
-            bottom: 90%;
+    .navbar {
+        height: 5%;
+        position: relative;
+        bottom: 90%;
 
-        }
+    }
     </style>
 </head>
 
@@ -48,8 +58,11 @@ include('partials-front/islogedin.php');
                     <li>
                         <a href="#">Contact</a>
                     </li>
+
                     <li>
-                        <a href="<?php echo SITEURL; ?>logoutFront.php">logout</a>
+                        <a href="<?php echo SITEURL.$addres; ?>"> <?php
+                             echo "$text";?>
+                        </a>
                     </li>
                     <li>
                 </ul>

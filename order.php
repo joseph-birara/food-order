@@ -1,7 +1,8 @@
+<?php include('partials-front/menu.php'); 
+include('partials-front/islogedin.php')
+?>
 
-<?php include('partials-front/menu.php'); ?>
-
-    <?php 
+<?php 
         //CHeck whether food id is set or not
         if(isset($_GET['food_id']))
         {
@@ -32,25 +33,21 @@
                 header('location:'.SITEURL);
             }
         }
-        // else
-        // {
-        //     //Redirect to homepage
-        //     header('location:'.SITEURL);
-        // }
+       
     ?>
 
-    <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search">
-        <div class="container">
-            
-            <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
 
-            <form action="" method="POST" class="order">
-                <fieldset>
-                    <legend>Selected Food</legend>
+<section class="food-search">
+    <div class="container">
 
-                    <div class="food-menu-img">
-                        <?php 
+        <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
+
+        <form action="" method="POST" class="order">
+            <fieldset>
+                <legend>Selected Food</legend>
+
+                <div class="food-menu-img">
+                    <?php 
                         
                             //CHeck whether the image is available or not
                             if($image_name=="")
@@ -62,48 +59,50 @@
                             {
                                 //Image is Available
                                 ?>
-                                <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                                <?php
+                    <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt=" Pizza"
+                        class="img-responsive img-curve">
+                    <?php
                             }
                         
                         ?>
-                        
-                    </div>
-    
-                    <div class="food-menu-desc">
-                        <h3><?php echo $title; ?></h3>
-                        <input type="hidden" name="food" value="<?php echo $title; ?>">
 
-                        <p class="food-price">$<?php echo $price; ?></p>
-                        <input type="hidden" name="price" value="<?php echo $price; ?>">
+                </div>
 
-                        <div class="order-label">Quantity</div>
-                        <input type="number" name="qty" class="input-responsive" value="1" required>
-                        
-                    </div>
+                <div class="food-menu-desc">
+                    <h3><?php echo $title; ?></h3>
+                    <input type="hidden" name="food" value="<?php echo $title; ?>">
 
-                </fieldset>
-                
-                <fieldset>
-                    <legend>Delivery Details</legend>
-                    <div class="order-label">Full Name</div>
-                    <input type="text" name="full-name" placeholder="your name here.. " class="input-responsive" required>
+                    <p class="food-price">$<?php echo $price; ?></p>
+                    <input type="hidden" name="price" value="<?php echo $price; ?>">
 
-                    <div class="order-label">Phone Number</div>
-                    <input type="tel" name="contact" placeholder="contact info..." class="input-responsive" required>
+                    <div class="order-label">Quantity</div>
+                    <input type="number" name="qty" class="input-responsive" value="1" required>
 
-                    <div class="order-label">Email</div>
-                    <input type="email" name="email" placeholder="E.g. hi@jossy.com" class="input-responsive" required>
+                </div>
 
-                    <div class="order-label">Address</div>
-                    <textarea name="address" rows="10" placeholder="yor address here..." class="input-responsive" required></textarea>
+            </fieldset>
 
-                    <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
-                </fieldset>
+            <fieldset>
+                <legend>Delivery Details</legend>
+                <div class="order-label">Full Name</div>
+                <input type="text" name="full-name" placeholder="your name here.. " class="input-responsive" required>
 
-            </form>
+                <div class="order-label">Phone Number</div>
+                <input type="tel" name="contact" placeholder="contact info..." class="input-responsive" required>
 
-            <?php 
+                <div class="order-label">Email</div>
+                <input type="email" name="email" placeholder="E.g. hi@jossy.com" class="input-responsive" required>
+
+                <div class="order-label">Address</div>
+                <textarea name="address" rows="10" placeholder="yor address here..." class="input-responsive"
+                    required></textarea>
+
+                <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
+            </fieldset>
+
+        </form>
+
+        <?php 
 
                 //CHeck whether submit button is clicked or not
                 if(isset($_POST['submit']))
@@ -164,8 +163,8 @@
             
             ?>
 
-        </div>
-    </section>
-    <!-- fOOD sEARCH Section Ends Here -->
+    </div>
+</section>
 
-    <?php include('partials-front/footer.php'); ?>
+
+<?php include('partials-front/footer.php'); ?>

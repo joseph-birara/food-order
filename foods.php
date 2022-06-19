@@ -1,28 +1,30 @@
+<?php include('partials-front/menu.php'); ?>
 
-    <?php include('partials-front/menu.php'); ?>
+<!-- fOOD sEARCH Section Starts Here -->
+<section class="food-search text-center">
+    <div class="container">
 
-    <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center">
-        <div class="container">
-            
-            <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
-                <input type="search" name="search" placeholder="Search for Food.." required>
-                <input type="submit" name="submit" value="Search" class="btn btn-primary">
-            </form>
+        <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
+            <input type="search" name="search" placeholder="Search for Food.." required>
+            <input type="submit" name="submit" value="Search" class="btn btn-primary">
+        </form>
 
-        </div>
-    </section>
-    <!-- fOOD sEARCH Section Ends Here -->
-
+    </div>
+</section>
+<!-- fOOD sEARCH Section Ends Here -->
 
 
-    <!-- fOOD MEnu Section Starts Here -->
-    <section class="food-menu">
-        <div class="">
-            <h2 class="text-center">dishesss</h2>
-            
 
-            <?php 
+<!-- fOOD MEnu Section Starts Here -->
+<section class="food-menu">
+
+    <h2 class="text-center">dishes</h2>
+    <div class="foods">
+
+
+
+
+        <?php 
                 //Display Foods that are Active
                 $sql = "SELECT * FROM tbl_food WHERE active='Yes'";
 
@@ -45,10 +47,10 @@
                         $price = $row['price'];
                         $image_name = $row['image_name'];
                         ?>
-                        
-                        <div class="food-menu-box">
-                            <div class="food-menu-img">
-                                <?php 
+
+        <div class="food-menu-box">
+            <div class="food-menu-img">
+                <?php 
                                     //CHeck whether image available or not
                                     if($image_name=="")
                                     {
@@ -59,26 +61,28 @@
                                     {
                                         //Image Available
                                         ?>
-                                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                                        <?php
+                <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt=" Pizza"
+                    class="img-responsive img-curve">
+                <?php
                                     }
                                 ?>
-                                
-                            </div>
 
-                            <div class="food-menu-desc">
-                                <h4><?php echo $title; ?></h4>
-                                <p class="food-price">$<?php echo $price; ?></p>
-                                <p class="food-detail">
-                                    <?php echo $description; ?>
-                                </p>
-                                <br>
+            </div>
 
-                                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
-                            </div>
-                        </div>
+            <div class="food-menu-desc">
+                <h4><?php echo $title; ?></h4>
+                <p class="food-price">$<?php echo $price; ?></p>
+                <p class="food-detail">
+                    <?php echo $description; ?>
+                </p>
+                <br>
 
-                        <?php
+                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order
+                    Now</a>
+            </div>
+        </div>
+
+        <?php
                     }
                 }
                 else
@@ -88,17 +92,17 @@
                 }
             ?>
 
-            
 
-            
 
-            <div class="clearfix"></div>
 
-            
 
-        </div>
 
-    </section>
-    <!-- fOOD Menu Section Ends Here -->
 
-    <?php include('partials-front/footer.php'); ?>
+    </div>
+
+
+
+</section>
+<!-- fOOD Menu Section Ends Here -->
+
+<?php include('partials-front/footer.php'); ?>

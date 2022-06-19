@@ -52,22 +52,22 @@
         ?>
         <br><br>
 
-                <!-- Button to Add Admin -->
-                <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn-primary">Add Category</a>
+        <!-- Button to Add Admin -->
+        <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn-primary">Add Category</a>
 
-                <br /><br /><br />
+        <br /><br /><br />
 
-                <table class="tbl-full">
-                    <tr>
-                        <th>S.N.</th>
-                        <th>Title</th>
-                        <th>Image</th>
-                        <th>Featured</th>
-                        <th>Active</th>
-                        <th>Actions</th>
-                    </tr>
+        <table class="tbl-full">
+            <tr>
+                <th>S.N.</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Featured</th>
+                <th>Active</th>
+                <th>Actions</th>
+            </tr>
 
-                    <?php 
+            <?php 
 
                         //Query to Get all CAtegories from Database
                         $sql = "SELECT * FROM tbl_category";
@@ -81,10 +81,8 @@
                         //Create Serial Number Variable and assign value as 1
                         $sn=1;
 
-                        //Check whether we have data in database or not
                         if($count>0)
                         {
-                            //We have data in database
                             //get the data and display
                             while($row=mysqli_fetch_assoc($res))
                             {
@@ -96,22 +94,22 @@
 
                                 ?>
 
-                                    <tr>
-                                        <td><?php echo $sn++; ?>. </td>
-                                        <td><?php echo $title; ?></td>
+            <tr>
+                <td><?php echo $sn++; ?>. </td>
+                <td><?php echo $title; ?></td>
 
-                                        <td>
+                <td>
 
-                                            <?php  
+                    <?php  
                                                 //Chcek whether image name is available or not
                                                 if($image_name!="")
                                                 {
                                                     //Display the Image
                                                     ?>
-                                                    
-                                                    <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" width="100px" >
-                                                    
-                                                    <?php
+
+                    <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" width="100px">
+
+                    <?php
                                                 }
                                                 else
                                                 {
@@ -120,17 +118,19 @@
                                                 }
                                             ?>
 
-                                        </td>
+                </td>
 
-                                        <td><?php echo $featured; ?></td>
-                                        <td><?php echo $active; ?></td>
-                                        <td>
-                                            <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>" class="btn-secondary">Update Category</a>
-                                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
-                                        </td>
-                                    </tr>
+                <td><?php echo $featured; ?></td>
+                <td><?php echo $active; ?></td>
+                <td>
+                    <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>"
+                        class="btn-secondary">Update Category</a>
+                    <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>"
+                        class="btn-danger">Delete Category</a>
+                </td>
+            </tr>
 
-                                <?php
+            <?php
 
                             }
                         }
@@ -140,21 +140,23 @@
                             //We'll display the message inside table
                             ?>
 
-                            <tr>
-                                <td colspan="6"><div class="error">No Category Added.</div></td>
-                            </tr>
+            <tr>
+                <td colspan="6">
+                    <div class="error">No Category Added.</div>
+                </td>
+            </tr>
 
-                            <?php
+            <?php
                         }
                     
                     ?>
 
-                    
 
-                    
-                </table>
+
+
+        </table>
     </div>
-    
+
 </div>
 
 <?php include('partials/footer.php'); ?>

@@ -3,7 +3,7 @@
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
         <div class="container">
-            
+
             <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
@@ -44,10 +44,10 @@
                         $title = $row['title'];
                         $image_name = $row['image_name'];
                         ?>
-                        
-                        <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id; ?>">
-                            <div class="box-3 float-container">
-                                <?php 
+
+            <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id; ?>">
+                <div class="box-3 float-container">
+                    <?php 
                                     //Check whether Image is available or not
                                     if($image_name=="")
                                     {
@@ -58,17 +58,18 @@
                                     {
                                         //Image Available
                                         ?>
-                                        <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive img-curve">
-                                        <?php
+                    <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Pizza"
+                        class="img-responsive img-curve">
+                    <?php
                                     }
                                 ?>
-                                
 
-                                <h3 class="float-text text-white"><?php echo $title; ?></h3>
-                            </div>
-                        </a>
 
-                        <?php
+                    <h3 class="float-text text-white"><?php echo $title; ?></h3>
+                </div>
+            </a>
+
+            <?php
                     }
                 }
                 else
@@ -90,8 +91,9 @@
     <section class="food-menu">
         <div class="container">
             <h4 class="text-center">dishes</h4>
+            <div class="foods">
 
-            <?php 
+                <?php 
             
             //Getting Foods from Database that are active and featured
             //SQL Query
@@ -117,9 +119,9 @@
                     $image_name = $row['image_name'];
                     ?>
 
-                    <div class="food-menu-box">
-                        <div class="food-menu-img">
-                            <?php 
+                <div class="food-menu-box">
+                    <div class="food-menu-img">
+                        <?php 
                                 //Check whether image available or not
                                 if($image_name=="")
                                 {
@@ -130,26 +132,29 @@
                                 {
                                     //Image Available
                                     ?>
-                                    <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                                    <?php
+                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt=" Pizza"
+                            class="img-responsive img-curve">
+                        <?php
                                 }
                             ?>
-                            
-                        </div>
 
-                        <div class="food-menu-desc">
-                            <h4><?php echo $title; ?></h4>
-                            <p class="food-price">$<?php echo $price; ?></p>
-                            <p class="food-detail">
-                                <?php echo $description; ?>
-                            </p>
-                            <br>
-
-                            <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
-                        </div>
                     </div>
 
-                    <?php
+                    <div class="food-menu-desc">
+                        <h4><?php echo $title; ?></h4>
+                        <p class="food-price">$<?php echo $price; ?></p>
+                        <p class="food-detail">
+                            <?php echo $description; ?>
+                        </p>
+                        <br>
+
+                        <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>"
+                            class="btn btn-primary">Order
+                            Now</a>
+                    </div>
+                </div>
+
+                <?php
                 }
             }
             else
@@ -160,21 +165,49 @@
             
             ?>
 
-            
 
- 
 
-            <div class="clearfix"></div>
 
-            
 
-        </div>
+            </div>
 
-        <p class="text-center">
-            <a href="#">See more Foods</a>
-        </p>
+            <p class="text-center">
+                <a href="#">See more Foods</a>
+            </p>
     </section>
     <!-- fOOD Menu Section Ends Here -->
+    <div class="review">
+        <div class="reviewIntro">
 
-    
+            <p>
+
+            <h3><br>
+                please share to us what you feel about our services and products using this form.
+                <br>
+            </h3>
+            <br>
+
+            </p>
+        </div>
+
+        <form action="">
+            <label for="name">your name:</label>
+            <br>
+            <input type="text" id="name" placeholder="enter your name" class="input"><br>
+            <label for="email">Email:</label>
+            <br>
+            <input type="text" placeholder="enter your email" id="email" class="input">
+            <br><br><br>
+
+            <div class="reviewmessage">
+
+                <textarea name="" placeholder="enter your message" id="" cols="30" rows="5"></textarea>
+            </div>
+            <input type="submit" value="send now" class="btnr" id="send">
+
+
+        </form>
+    </div>
+
+
     <?php include('partials-front/footer.php'); ?>

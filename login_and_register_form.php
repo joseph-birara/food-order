@@ -20,29 +20,50 @@ if(isset($_SESSION['notcreate'])){
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="css/login_and_register_form_style.css">
+    <style>
+
+    </style>
+    <script defer src="css/formValidation.js">
+    </script>
 </head>
 
 <body>
+
+    <div id="error" cass="error">
+
+        <h2>hello</h2>
+    </div>
     <div id='login-form' class='login-page'>
-        <div class="form-box">
+        <div class=" form-box">
             <div class='button-box'>
                 <div id='btn'></div>
                 <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
                 <button type='button' onclick='register()' class='toggle-btn'>Register</button>
             </div>
             <form id='login' class='input-group-login' method="post" action="loginFront.php">
+                Name:
                 <input type="text" name="name" no-login-message-fronttype='text' class='input-field'
                     placeholder='user name' required>
+                password:
                 <input name="pass" type='password' class='input-field' placeholder='Enter Password' required>
                 <input type='checkbox' class='check-box'><span>Remember Password</span>
                 <button type='submit' class='submit-btn'>Log in</button>
             </form>
-            <form id='register' class='input-group-register' action=" create.php" method="post">
-                <input type='text' class='input-field' placeholder='First Name' name="username" equired>
-                <input type='text' class='input-field' placeholder='Last Name ' name="lastname" required>
-                <input type='email' class='input-field' placeholder='Email Id' name="email" required>
-                <input type='password' class='input-field' placeholder='Enter Password' required name="password">
-                <input type='password' class='input-field' placeholder='Confirm Password' required>
+            <form onsubmit="return(validate());" id='register' class='input-group-register' action=" create.php"
+                method="post">
+                Name:
+                <input id="name" type='text' class='input-field' placeholder='First Name' name="username" equired>
+                Last name:
+                <input id="lastname" type='text' class='input-field' placeholder='Last Name ' name="lastname" required>
+                Email:
+                <input id="email" type='email' class='input-field' placeholder='Email Id' name="email" required>
+                Password:
+                <input id="password" type='password' class='input-field' placeholder='Enter Password' required
+                    name=" password">
+                Confirm password:
+
+                <input id="confirm_password" type='password' class='input-field' placeholder='Confirm Password'
+                    required>
                 <input type='checkbox' class='check-box'><span>I agree to the terms and conditions</span>
                 <button type='submit' class='submit-btn'>Register</button>
             </form>
@@ -55,21 +76,22 @@ if(isset($_SESSION['notcreate'])){
 
     function register() {
         x.style.left = '-400px';
-        y.style.left = '50px';
+        y.style.left = '100px';
         z.style.left = '110px';
     }
 
     function login() {
-        x.style.left = '50px';
-        y.style.left = '450px';
+        x.style.left = '110px';
+        y.style.left = '650px';
         z.style.left = '0px';
+
     }
     </script>
     <script>
     var modal = document.getElementById('login-form');
     window.onclick = function(event) {
         if (event.target == modal) {
-            modal.style.display = "none";
+            modal.style.display = " none";
         }
     }
     </script>

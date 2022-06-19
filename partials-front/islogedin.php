@@ -7,7 +7,7 @@ session_start();
     {
         //User is not logged in
         //REdirect to login page with message
-        $_SESSION['no-login-message-front'] = "<div class='error text-center'>Please login to access  Panel.</div>";
+        $_SESSION['no-login-message-front'] = "<div class='error text-center'>Please login to access page .</div>";
         //REdirect to Login Page
         header('location:'.SITEURL.'login_and_register_form.php');
     }
