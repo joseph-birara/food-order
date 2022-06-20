@@ -1,7 +1,7 @@
 # food delivery and managment website
 fully functional except for payment methodes 
 #
-##file stracture
+## file stracture
 .. the config folder conatins constants 
 ..admin folder fontains all files related addmin functionality
 ..images folder is for storage of uplaoded images
