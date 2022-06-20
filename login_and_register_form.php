@@ -1,9 +1,9 @@
 <?php include('config/constants.php'); 
 session_start();
 $message="";
-if(isset($_SESSION['no-login-message-front'])){
-    $message= $_SESSION['no-login-message-front'];
-    unset($_SESSION['no-login-message-front']);
+if(isset($_SESSION['loginFrontFaild'])){
+    $message= $_SESSION['loginFrontFaild'];
+    unset($_SESSION['loginFrontFaild']);
 }
 if(isset($_SESSION['create'])){
     $message=$_SESSION['create'];
@@ -172,8 +172,8 @@ function validateEmail(){
          name.focus();
         
     }
-        if (userName.length > 12 || userName.length< 6) {
-            text = " name length must be between 6 and 12";
+        if (userName.length > 12 || userName.length< 4) {
+            text = " name length must be between 4 and 12";
          name.focus();
         
 
@@ -197,8 +197,8 @@ function validateLastname()
          lastname.focus();
         
     }
-        if (lName.length > 12 || lName.length< 6) {
-            tx = "last name length must be between 6 and 12";
+        if (lName.length > 12 || lName.length< 3) {
+            tx = "last name length must be between 3 and 12";
          lastname.focus();
         
 
