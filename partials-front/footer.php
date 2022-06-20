@@ -96,7 +96,7 @@
 
         </div>
 
-        <div class="credit"> copyright &copy 2022 by </div>
+        <div class="credit"> copyright &copy 2022 by Home of foodes </div>
 
     </section>
 </body>

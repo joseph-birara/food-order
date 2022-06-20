@@ -24,7 +24,7 @@
     <!-- Categories Section Starts Here -->
     <section class="categories">
         <div class="container">
-            <h4 class="text-center">Foods</h4>
+            <h4 class="text-center"></h4>
 
             <?php 
                 //Create SQL Query to Display Categories from Database

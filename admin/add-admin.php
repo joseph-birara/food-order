@@ -14,7 +14,7 @@
             }
         ?>
 
-        <form action="" method="POST" onsubmit="return(validate());" name ="myForm">
+        <form action="" method="POST"  name ="myForm">
 
             <table class="tbl-30">
                 <tr>
@@ -55,7 +55,7 @@
 
 
     </div>
-    <script src="./partials/validation.js"></script>
+    
 </div>
 
 <?php include('partials/footer.php'); ?>
