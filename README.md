@@ -67,5 +67,6 @@ The repository is organized as follows:
 
 ## Contributors
 
- `[Joseph Birara](https://github.com/joseph-birara)` 
- `[Birtukan Degu]` 
+- [Joseph Birara](https://github.com/joseph-birara)
+- [Birtukan Degu](https://github.com/birtukan-degu)
+ 
